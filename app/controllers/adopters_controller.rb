@@ -54,6 +54,6 @@ class AdoptersController < ApplicationController
     end
 
     def adopter_params
-      params[:adopter]
+      params.require(:adopter).permit(:name, :kids, :cats, :dogs, :home_type, :searching_for, :ideal_temperament, :ideal_active_level, :hours_away_from_home, :bio)
     end
 end

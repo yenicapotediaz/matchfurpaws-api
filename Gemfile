@@ -5,6 +5,7 @@ gem 'rails', '4.2.7'
 gem 'rails-api'
 gem 'pg'
 gem 'faker'
+gem "awesome_print", require:"ap"
 
 group :development do
   gem 'spring'

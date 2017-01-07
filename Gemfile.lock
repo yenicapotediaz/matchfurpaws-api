@@ -37,6 +37,7 @@ GEM
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
     arel (6.0.4)
+    awesome_print (1.7.0)
     builder (3.2.2)
     concurrent-ruby (1.0.4)
     diff-lcs (1.2.5)
@@ -129,6 +130,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  awesome_print
   faker
   pg
   rails (= 4.2.7)
