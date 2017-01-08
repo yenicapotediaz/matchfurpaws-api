@@ -11,24 +11,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170106200452) do
+ActiveRecord::Schema.define(version: 20170108045046) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "adopters", force: :cascade do |t|
     t.string   "name"
-    t.string   "kids",                              array: true
+    t.string   "kids"
     t.boolean  "cats"
     t.boolean  "dogs"
     t.string   "home_type"
     t.string   "searching_for"
-    t.string   "ideal_temperament",                 array: true
-    t.string   "ideal_active_level",                array: true
-    t.integer  "hours_away_from_home"
+    t.string   "ideal_temperament"
+    t.string   "ideal_active_level"
     t.text     "bio"
-    t.datetime "created_at",           null: false
-    t.datetime "updated_at",           null: false
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
   end
 
   create_table "adopters_pets", id: false, force: :cascade do |t|
@@ -38,28 +37,23 @@ ActiveRecord::Schema.define(version: 20170106200452) do
 
   create_table "pets", force: :cascade do |t|
     t.string   "name"
-    t.string   "photos",                          array: true
+    t.string   "photos"
     t.string   "est_age"
     t.string   "gender"
     t.string   "breed"
     t.string   "size"
-    t.string   "hypoallergenic",                  array: true
     t.boolean  "cats"
     t.boolean  "dogs"
-    t.boolean  "needs_buddy"
-    t.string   "kids",                            array: true
+    t.string   "kids"
     t.string   "temperament"
-    t.string   "exercie_needs"
-    t.string   "home_type",                       array: true
-    t.integer  "hours_home_alone"
+    t.string   "exercise_needs"
+    t.string   "home_type"
     t.text     "bio"
     t.date     "intake_date"
-    t.boolean  "ready_for_adoption"
     t.integer  "adoption_fee"
-    t.string   "special_needs",                   array: true
     t.integer  "shelter_id"
-    t.datetime "created_at",         null: false
-    t.datetime "updated_at",         null: false
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
     t.string   "species"
   end
 
