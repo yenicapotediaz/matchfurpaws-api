@@ -4,8 +4,16 @@ class PetsController < ApplicationController
   # GET /pets
   # GET /pets.json
   def index
-    @pets = Pet.all
-
+    if params[:shelter_id] != nil
+      shelter = Shelter.find(params[:shelter_id])
+      @pets = shelter.pets
+    else
+      @pets = Pet.all
+      @pets = Pet.where(nil)
+      filtering_params(params).each do |key, value|
+        @pets = @pets.public_send(key, value) if value.present?
+      end
+    end
     render json: @pets
   end
 
@@ -55,5 +63,10 @@ class PetsController < ApplicationController
 
     def pet_params
       params.require(:pet).permit(:name, :photos, :est_age, :gender, :breed, :size, :cats, :dogs, :kids, :temperament, :exercise_needs, :home_type, :bio, :intake_date, :adoption_fee, :shelter_id, :species)
+    end
+
+    # A list of the param names that can be used for filtering the Product list
+    def filtering_params(params)
+      params.slice(:species, :cats, :dogs, :kids, :home_type)
     end
 end
