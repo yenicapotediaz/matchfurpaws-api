@@ -4,6 +4,7 @@ class User < ActiveRecord::Base
   validates_uniqueness_of :email, case_sensitive: false
   validates_format_of :email, with: /@/
   before_save :downcase_email
+  has_secure_password
 
 
 
