@@ -1,11 +1,12 @@
 class User < ActiveRecord::Base
   belongs_to :userable, polymorphic: true
+  has_secure_password
+
   validates_presence_of :email
   validates_uniqueness_of :email, case_sensitive: false
   validates_format_of :email, with: /@/
-  before_save :downcase_email
-  has_secure_password
 
+  before_save :downcase_email
 
 
   def downcase_email

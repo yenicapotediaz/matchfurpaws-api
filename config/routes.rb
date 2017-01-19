@@ -7,5 +7,6 @@ Rails.application.routes.draw do
     resources :pets, except: [:new, :edit]
   end
 
-  post 'authenticate', to: 'authentication#authenticate'
+  post 'users', to: 'users#create'
+  post 'login', to: 'users#login'
 end
