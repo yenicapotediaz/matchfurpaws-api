@@ -10,6 +10,7 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'jwt'
 gem 'simple_command'
 gem 'rack-cors', :require => 'rack/cors'
+gem 'rails_12factor'
 
 group :development do
   gem 'spring'
