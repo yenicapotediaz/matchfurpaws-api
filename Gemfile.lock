@@ -63,6 +63,7 @@ GEM
       mini_portile2 (~> 2.1.0)
     pg (0.19.0)
     rack (1.6.5)
+    rack-cors (0.4.0)
     rack-test (0.6.3)
       rack (>= 1.0)
     rails (4.2.7)
@@ -138,6 +139,7 @@ DEPENDENCIES
   faker
   jwt
   pg
+  rack-cors
   rails (= 4.2.7)
   rails-api
   rspec-rails (~> 3.0)
