@@ -4,8 +4,7 @@ class SheltersController < ApplicationController
   # GET /shelters
   # GET /shelters.json
   def index
-    @shelters = Shelter.all
-
+    @shelters = Shelter.where(filtering_params)
     render json: @shelters
   end
 
@@ -55,5 +54,10 @@ class SheltersController < ApplicationController
 
     def shelter_params
       params.require(:shelter).permit(:name, :photo, :address, :zip_code, :city, :state, :email, :website, :bio)
+    end
+
+    # A list of the param names that can be used for filtering the Product list
+    def filtering_params
+      params.permit(:email, :name)
     end
 end

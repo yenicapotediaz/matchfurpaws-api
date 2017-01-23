@@ -4,7 +4,7 @@ class AdoptersController < ApplicationController
   # GET /adopters
   # GET /adopters.json
   def index
-    @adopters = Adopter.all
+    @adopters = Adopter.where(filtering_params)
 
     render json: @adopters
   end
@@ -55,5 +55,10 @@ class AdoptersController < ApplicationController
 
     def adopter_params
       params.require(:adopter).permit(:name, :kids, :cats, :dogs, :home_type, :searching_for, :ideal_temperament, :ideal_active_level, :bio)
+    end
+
+    # A list of the param names that can be used for filtering the Product list
+    def filtering_params
+      params.permit(:email)
     end
 end
