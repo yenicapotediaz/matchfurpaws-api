@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170112183822) do
+ActiveRecord::Schema.define(version: 20170123080311) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -45,16 +45,17 @@ ActiveRecord::Schema.define(version: 20170112183822) do
     t.boolean  "cats"
     t.boolean  "dogs"
     t.string   "kids"
-    t.string   "temperament"
     t.string   "exercise_needs"
     t.string   "home_type"
     t.text     "bio"
     t.date     "intake_date"
-    t.integer  "adoption_fee"
+    t.string   "adoption_fee"
     t.integer  "shelter_id"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
     t.string   "species"
+    t.string   "adoption_status"
+    t.string   "location"
   end
 
   create_table "shelters", force: :cascade do |t|
@@ -66,6 +67,9 @@ ActiveRecord::Schema.define(version: 20170112183822) do
     t.text     "bio"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "zip_code"
+    t.string   "city"
+    t.string   "state"
   end
 
   create_table "users", force: :cascade do |t|
