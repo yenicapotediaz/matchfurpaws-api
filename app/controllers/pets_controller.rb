@@ -53,11 +53,11 @@ class PetsController < ApplicationController
     end
 
     def pet_params
-      params.require(:pet).permit(:name, :photos, :est_age, :gender, :breed, :size, :cats, :dogs, :kids, :temperament, :exercise_needs, :home_type, :bio, :intake_date, :adoption_fee, :shelter_id, :species)
+      params.require(:pet).permit(:name, :photos, :est_age, :gender, :breed, :size, :cats, :dogs, :kids, :exercise_needs, :home_type, :bio, :intake_date, :adoption_fee, :shelter_id, :species, :adoption_status, :location)
     end
 
     # A list of the param names that can be used for filtering the Product list
     def filtering_params
-      params.permit(:shelter_id, :species, :cats, :dogs, :kids, :home_type)
+      params.permit(:shelter_id, :species, :cats, :dogs, :kids, :home_type, :location, :adoption_status, :exercise_needs)
     end
 end
