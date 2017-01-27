@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170124103848) do
+ActiveRecord::Schema.define(version: 20170127100207) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -57,6 +57,8 @@ ActiveRecord::Schema.define(version: 20170124103848) do
     t.string   "adoption_status"
     t.string   "location"
     t.boolean  "kid_friendly"
+    t.string   "shelter_name"
+    t.string   "shelter_url"
   end
 
   create_table "shelters", force: :cascade do |t|
